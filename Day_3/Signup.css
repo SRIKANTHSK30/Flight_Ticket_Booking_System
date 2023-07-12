@@ -1,6 +1,11 @@
+/* Generated from SCSS and GULP autoprefixer */
 html,
 body {
-    height: 100%; 
+    height: 100%;
+    background: #3C3B3F;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #605C3C, #3C3B3F);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 body {
     display: -webkit-box;
@@ -9,11 +14,12 @@ body {
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
+    padding-top: 6rem;
 }
 .login__form {
     background: #fff;
     color: #333;
-    height: 450px !important;
+    height: 620px !important;
     font-family: "Open Sans", sans-serif;
     border-radius: 5px;
     /* padding-left: 3rem; */
@@ -33,7 +39,7 @@ body {
     margin-right: auto
 }
 .login_form .loginmain .login_group {
-    position: relative
+    position: relative;
 }
 .login_form .loginmain .logingroup .login_input {
     margin-top: 50px;
@@ -126,22 +132,24 @@ input:focus ~ .login__bar:after {
 }
 @media (min-width: 620px) {
     body {
-        background: url('C:\Users\hp\Downloads\3731533_1971537.jpg') no-repeat;
+        background: url('https://img.freepik.com/premium-vector/white-plane-blue-sky-background-flies-clouds-illustration_567746-2821.jpg?w=1380') no-repeat;
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
     }
     .login__form {
         max-width: 400px;
-       /* height: 470px; */
+        height: 620px;
         margin-left: auto;
         margin-right: auto;
         border-radius: 20px 20px 20px ;
         box-shadow: 15px 15px 15px;
     }
     .login__title {
-        /* position: relative; */
-        padding-left: -1rem ;
+        position: relative
     }
     .login__footer {
         text-align: center
