@@ -16,7 +16,7 @@ body {
     height: 450px !important;
     font-family: "Open Sans", sans-serif;
     border-radius: 5px;
-    /* padding-left: 3rem; */
+   padding-left: 3rem; 
 }
 .login_form .login_header {
     padding-top: 30px;
@@ -126,7 +126,7 @@ input:focus ~ .login__bar:after {
 }
 @media (min-width: 620px) {
     body {
-        background: url('C:\Users\hp\Downloads\3731533_1971537.jpg') no-repeat;
+        background: url('https://assets.wego.com/image/upload/c_fill,fl_lossy,q_auto:best,f_auto,w_2560/v1597920829/web/hero_images/in_1.jpg') no-repeat;
         background-attachment: fixed;
         background-position: center;
         background-size: cover;

@@ -1,28 +1,68 @@
-import "../Flight/Login.css";
-
+import { Link } from 'react-router-dom';
+import "../Flight/Up_Log.css"
+import logo from "../Flight/video.mp4"
 function Login() {
   return (
-    <form className="login__form" method="POST" name="frm_login" action="#">
-    <header className="login__header">
-       <h1 className="login__title">Login</h1>
-    </header>
-    <main className="login__main">
-       <div className="login__group">
-          <input className="login__input" type="text" name="input_email" required/>
-          <label className="login__label">Email </label>
-          <div className="login__bar"></div>
-       </div>
-       <div className="login__group">
-          <input className="login__input" type="password" name="input_password" required/>
-          <label className="login__label">Password </label>
-          <div className="login__bar"></div>
-       </div>
-       <p className="login__terms">Create an Account ?<a href="#">SIGN UP</a></p>
-    </main>
-    <footer className="login__footer">
-      <input className="login__button" type="button" name="btn_signin" value="Login"/>
-    </footer>
- </form>
+   <div>
+	<section class="ftco-section">
+   <div class="container">
+      <div class="row justify-content-center">
+         <div class="col-md-6 text-center mb-5">
+          
+         </div>
+      </div>
+      <div class="row justify-content-center">
+         <div class="col-md-12 col-lg-10">
+            <div class="wrap d-md-flex">
+               {/* <div class="img" style="background-image: url(images/bg-1.jpg);"> */}
+
+               <div class="logo">
+               <video className='videoTag' autoPlay loop muted>
+                     <source src={logo} type='video/mp4' />
+               </video>
+            </div>
+               <div class="login-wrap p-4 p-md-5">
+               <div class="d-flex">
+                  <div class="w-100">
+                     <h3 class="mb-4">LOGIN</h3>
+                  </div>
+                     <div class="w-100">
+                        <p class="social-media d-flex justify-content-end">
+                           <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
+                           <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+                        </p>
+                     </div>
+               </div>
+                  <form action="#" class="signin-form">
+                  <div class="form-group mb-3">
+                     <label class="label" for="name">Username</label>
+                     <input type="text" class="form-control" placeholder="Username" required/>
+                  </div>
+               <div class="form-group mb-3">
+                  <label class="label" for="password">Password</label>
+                 <input type="password" class="form-control" placeholder="Password" required/>
+               </div>
+               <div class="form-group">
+                  <button type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
+               </div>
+               <div class="form-group d-md-flex">
+                  <div class="w-50 text-left">
+                        </div>
+                        <div class="w-50 text-md-right">
+                           <a href="#">Forgot Password</a>
+                        </div>
+               </div>
+             </form>
+             <p class="text-center">Not a member? <a data-toggle="tab" href="/signup">Sign Up</a></p>
+           </div>
+         </div>
+         </div>
+      </div>
+   </div>
+
+</section>
+</div>
+
   );
 }
 
