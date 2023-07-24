@@ -1,69 +1,123 @@
-import { Link } from 'react-router-dom';
-import "../Flight/Up_Log.css"
-import logo from "../Flight/video.mp4"
-function Login() {
-  return (
-   <div>
-	<section class="ftco-section">
-   <div class="container">
-      <div class="row justify-content-center">
-         <div class="col-md-6 text-center mb-5">
-          
-         </div>
-      </div>
-      <div class="row justify-content-center">
-         <div class="col-md-12 col-lg-10">
-            <div class="wrap d-md-flex">
-               {/* <div class="img" style="background-image: url(images/bg-1.jpg);"> */}
+import React, { useState } from 'react';
+import '../Flight/Login.css'
+import { useNavigate,Link, } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import {login,logout} from '../features/userSlice'
+import {useSelector} from 'react-redux';
+import logo from '../Flight/video.mp4';
 
-               <div class="logo">
+const Login = () => {
+
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+  const [userError, setUserError] = useState('');
+  const dispatch=useDispatch();
+  const navigate=useNavigate();
+  const user=useSelector(state => state.user.value);
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    setEmailError('');
+  };
+
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+    setUserError('');
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+    setPasswordError('');
+  };
+
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!username) {
+      setUserError('Please enter your name');
+      return;
+    }
+
+    if (!email) {
+      setEmailError('Please enter your email.');
+      return;
+    }
+
+    const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    if (!emailRegex.test(email)) {
+      setEmailError('Please enter a valid email address.');
+      return;
+    }
+
+    if (!password) {
+      setPasswordError('Please enter your password.');
+      return;
+    } else if (password.length < 8) {
+      setPasswordError('Password should be at least 8 characters long.');
+      return;
+    }
+    console.log('Login submitted:', email, password);
+    alert('You successfully Login');
+    dispatch(login({ username,email}));
+    navigate("/nav");
+    
+  };
+  
+
+
+    return (
+    <>
+   
+<div class="wrapper33" >
+<div class="inner33">
+<div class="image-holder33">
+<div class="gwi">
                <video className='videoTag' autoPlay loop muted>
                      <source src={logo} type='video/mp4' />
                </video>
             </div>
-               <div class="login-wrap p-4 p-md-5">
-               <div class="d-flex">
-                  <div class="w-100">
-                     <h3 class="mb-4">LOGIN</h3>
-                  </div>
-                     <div class="w-100">
-                        <p class="social-media d-flex justify-content-end">
-                           <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
-                           <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
-                        </p>
-                     </div>
-               </div>
-                  <form action="#" class="signin-form">
-                  <div class="form-group mb-3">
-                     <label class="label" for="name">Username</label>
-                     <input type="text" class="form-control" placeholder="Username" required/>
-                  </div>
-               <div class="form-group mb-3">
-                  <label class="label" for="password">Password</label>
-                 <input type="password" class="form-control" placeholder="Password" required/>
-               </div>
-               <div class="form-group">
-                  <button type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
-               </div>
-               <div class="form-group d-md-flex">
-                  <div class="w-50 text-left">
-                        </div>
-                        <div class="w-50 text-md-right">
-                           <a href="#">Forgot Password</a>
-                        </div>
-               </div>
-             </form>
-             <p class="text-center">Not a member? <a data-toggle="tab" href="/signup">Sign Up</a></p>
-           </div>
-         </div>
-         </div>
-      </div>
-   </div>
+</div>
+<form>
+<h3>LOGIN</h3>
+<div class="form-wrapper33">
+  <label><h6> Username</h6></label>
+<input type="text" placeholder="Username" class="form-control" id='username'
+                value={username}
+                onChange={handleUsernameChange}/>
+                  {userError && <p className="error-message" style={{ color: 'red' }}>{userError}</p>}
+ 
+</div><br></br>
+<div class="form-wrapper33">
+<label><h6>Email</h6></label>
+<input type="text" placeholder="Email Address" class="form-control"  id='email'
+                value={email}
+                onChange={handleEmailChange}/>
+                 {emailError && <p className="error-message" style={{ color: 'red' }}>{emailError}</p>}
 
-</section>
+</div><br></br>
+
+<div class="form-wrapper33">
+<label><h6>Password</h6></label>
+<input type="password" placeholder="Password" class="form-control"   id='password'
+                value={password}
+                onChange={handlePasswordChange}/>
+{passwordError && <p className='error-message' style={{ color: 'red' }}>{passwordError}</p>}<br></br>
+<p class="text-center">Not a member? <a data-toggle="tab" href="/">Sign Up</a></p><br></br>
+</div><button onClick={handleSubmit} type="submit" >Log In</button><br></br>
+
+
+
+</form>
+</div>
 </div>
 
+    </>
   );
-}
+};
 
 export default Login;

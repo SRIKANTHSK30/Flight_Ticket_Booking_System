@@ -57,7 +57,13 @@
     line-height: 1.5;
     color: #212529;
     text-align: left;
-}
+    padding-bottom: 20px;
+    background-image:url("https://storage.cloudconvert.com/tasks/b3ded32a-3f19-4ac3-8ba9-a40446fa514f/bac.jpg?AWSAccessKeyId=cloudconvert-production&Expires=1689242167&Signature=FRXvqhY%2BwdLCLKTCwXfstV4stAA%3D&response-content-disposition=inline%3B%20filename%3D%22bac.jpg%22&response-content-type=image%2Fjpeg"); 
+ }
+ .logo{
+  width: auto;
+  height: auto;
+ }
   
   [tabindex="-1"]:focus {
     outline: 0 !important; }
@@ -164,11 +170,9 @@
   figure {
     margin: 0 0 1rem; }
   
-  .img {
+  img {
     vertical-align: middle;
     border-style: none; 
-    width:250px;
-    height:90px;
     }
   
   svg {
@@ -3784,7 +3788,7 @@
     background-color: #fff;
     background-clip: border-box;
     border: 1px solid rgba(0, 0, 0, 0.125);
-    }
+    border-radius: 0.25rem; }
     .card > hr {
       margin-right: 0;
       margin-left: 0; }
@@ -8157,7 +8161,7 @@
   h1, h2, h3, h4, h5,
   .h1, .h2, .h3, .h4, .h5 {
     line-height: 1.5;
-    font-weight: 550;
+    font-weight: 400;
     font-family: "Lato", Arial, sans-serif;
     color: #000; }
   
