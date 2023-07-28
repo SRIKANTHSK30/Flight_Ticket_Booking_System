@@ -1,0 +1,80 @@
+/* Common styles */
+.divpara {
+    font-size: 16px;
+    color: #4d4d4d;
+    align-items: center;
+}
+
+.divbox {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 400px 20px;
+    height: 30rem;
+    width: 10rem;
+    /* position: relative; */
+    z-index: 1;
+}
+
+.mfflop {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.divimg {
+    width: 60%;
+    height: 50%;
+    margin-right: 3rem;
+}
+
+.divttl {
+    margin-top: 18rem;
+    font-weight: bolder;
+}
+
+.divpara {
+    margin-top: 2rem;
+}
+
+.toprflcont {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    margin: 15px 0;
+    justify-content: flex-start;
+}
+
+.hdrtxt {
+    font-size: 22px;
+    font-weight: 700;
+    color: black;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 768px) {
+  
+    .innerWrap {
+        margin-left: 1rem;
+        width: 100%;
+    }
+
+    .divbox {
+        width: 100%;
+        height: auto;
+        margin: 1rem 0;
+    }
+
+    .divimg {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+    }
+}

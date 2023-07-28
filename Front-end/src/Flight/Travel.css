@@ -1,0 +1,36 @@
+.airline{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+}
+.first{
+    padding-left: 60px;
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+.second{
+    padding-top: 2rem;
+    padding-left: 61px;
+    text-align: center;
+    color: rgb(80, 80, 80);
+    font-family: 'Poppins';
+}
+
+.fli1{
+    display: flex;
+    margin-left: 17rem;
+    margin-top: 4rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .fli1 {
+        flex-direction: column;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+    .first, .second {
+        padding: 0;
+    }
+}

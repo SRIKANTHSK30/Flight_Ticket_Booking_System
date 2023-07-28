@@ -1,0 +1,77 @@
+import { useState } from "react";
+import "../Flight/login22.css";
+import FormInput from "../Flight/form";
+
+const Login1 = () => {
+  const [values, setValues] = useState({
+    username: "",
+    email: "",
+    birthday: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const inputs = [
+    {
+      id: 1,
+      name: "name",
+      type: "text",
+      placeholder: "Username",
+      errorMessage:
+        "Username should be 3-16 characters and shouldn't include any special character!",
+      label: "Username",
+      pattern: "^[A-Za-z0-9]{3,16}$",
+      required: true,
+    },
+    {
+        id: 2,
+        name: "email",
+        type: "email",
+        placeholder: "Email",
+        errorMessage: "It should be a valid email address!",
+        label: "Email",
+        required: true,
+      },
+      {
+        id: 3,
+        name: "birthday",
+        type: "date",
+        // placeholder: "Birthday",
+        label: "DOB",
+      },
+      {
+        id: 4,
+        name: "AGE",
+        type: "text",
+        placeholder: "Age",
+        errorMessage:
+          "Please enter the Age!",
+        label: "Age",
+        required: true,
+      },
+    ];
+    const handleSubmit = (e) => {
+      e.preventDefault();
+    };
+    const onChange = (e) => {
+        setValues({ ...values, [e.target.name]: e.target.value });
+      };
+      return (
+        
+        <div className="sri">
+          <form  className="Vino" onSubmit={handleSubmit} style={{width:780,paddingLeft:222,borderRadius:100} } >
+            <h1 className="suhass">PASSENGER DETAILS</h1>
+            {inputs.map((input) => (
+              <FormInput
+                key={input.id}
+                {...input}
+                value={values[input.name]}
+                onChange={onChange}
+              />
+            ))}
+            <button className="vis">Submit</button>
+          </form>
+        </div>
+      );
+    };
+    
+    export default Login1;
